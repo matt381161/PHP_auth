@@ -15,6 +15,7 @@
 	if(isset($_POST['pwd_confirm']))
 	$pwd_confirm = $_POST['pwd_confirm'];
 
+	if(isset($_POST['mode']))
 	$mode=$_POST['mode'];
 	
 	switch ($mode) {
