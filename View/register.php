@@ -18,16 +18,22 @@
         xmlhttp.send();
     }
 }
+    function back(){
+      document.location.href="/View/login.php";
+    }
   </script>
   <title>Register</title>
  </head>
  <body>
  	<form method="POST" action="/Controller/authController.php">
   		<div class="form-group">
+        <input type="file">
+      </div>
+      <div class="form-group">
     		<label for="email">Email address:</label>
     		<input type="email" class="form-control" id="email" name="email" 
         onkeyup="showHint(this.value);" required>
-        <p><span id="txtHint"></span></p>
+        <p><span id="txtHint" class="badge"></span></p>
   		</div>
   		<div class="form-group">
     		<label for="pwd">Password:</label>
@@ -39,6 +45,7 @@
       </div>
       <input type="hidden" name="mode" value="register">
 		  <button type="submit" class="btn btn-default">Submit</button>
+      <button class="btn btn-default" onClick="back()">Back</button>
 		</form>
  </body>
  </html>

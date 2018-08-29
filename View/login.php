@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <?php require('bootstrap.php'); ?>
-  <?php require('../Model/FBSDK.php'); ?>
   <title>Auth</title>
  </head>
  <body>
