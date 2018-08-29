@@ -22,15 +22,6 @@
 		  <button type="submit" class="btn btn-default">Submit</button>
 		  <button class="btn btn-default" onClick="register()">Register</button>
 		</form>
-    
-    <?php /* ?>
-    <fb:login-button
-      scope="public_profile,email"
-      onlogin="checkLoginState();">
-    </fb:login-button>
-    <?php */ ?>
-    <div id="status">
-  </div>
  </body>
  <script type="text/javascript">
    function register(){
