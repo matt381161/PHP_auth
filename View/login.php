@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <?php require('bootstrap.php'); ?>
+  <?php 
+  require('bootstrap.php');
+  session_start();
+  session_destroy();
+  ?>
   <title>Auth</title>
  </head>
  <body>

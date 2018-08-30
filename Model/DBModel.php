@@ -23,7 +23,7 @@ class DBaccess
             $conn = mysqli_connect(
                     DBconfig::$servername,
                     DBconfig::$username,
-                DBconfig::$password,
+                    DBconfig::$password,
                     DBconfig::$dbname
                 );
             $sql = "select email from users";
@@ -80,7 +80,7 @@ class DBaccess
             $conn = mysqli_connect(
                     DBconfig::$servername,
                     DBconfig::$username,
-                DBconfig::$password,
+                    DBconfig::$password,
                     DBconfig::$dbname
                 );
             $sql = "select * from users where email='" . $email . "'";
@@ -111,11 +111,12 @@ class DBaccess
             $conn = mysqli_connect(
                     DBconfig::$servername,
                     DBconfig::$username,
-                DBconfig::$password,
+                    DBconfig::$password,
                     DBconfig::$dbname
                 );
             $sql = "delete from users where email='" . $email . "'";
             mysqli_query($conn, $sql);
+            session_destroy();
             header('Location: ../index.php');
             exit;
         } else {

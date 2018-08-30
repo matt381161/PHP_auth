@@ -25,9 +25,12 @@
   <title>Register</title>
  </head>
  <body>
- 	<form method="POST" action="/Controller/authController.php">
+ 	<form method="POST" action="/Controller/authController.php" 
+  enctype="multipart/form-data">
   		<div class="form-group">
-        <input type="file">
+        <img id="preview_progressbarTW_img" src="" width="128" height="128"/>
+        <label for="photo">Photo:</label>
+        <input class="form-control" type="file" id="photo" accept="image/*" />
       </div>
       <div class="form-group">
     		<label for="email">Email address:</label>
@@ -47,5 +50,19 @@
 		  <button type="submit" class="btn btn-default">Submit</button>
       <button class="btn btn-default" onClick="back()">Back</button>
 		</form>
+    <script type="text/javascript">
+      $("#photo").change(function(){
+        readURL(this);
+        });
+      function readURL(input){
+        if(input.files && input.files[0]){
+            var reader = new FileReader();
+          reader.onload = function (e) {
+             $("#preview_progressbarTW_img").attr('src', e.target.result);
+          }
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
  </body>
  </html>
